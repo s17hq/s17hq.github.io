@@ -6,3 +6,22 @@
 <p align="center">
   Clean and minimal homepage for Syntax17.
 </p>
+
+## Tech stack
+
+- [Vite](https://vite.dev) + [React](https://react.dev)
+- [Tailwind CSS v4](https://tailwindcss.com)
+
+## Development
+
+```bash
+npm install
+npm run dev      # start dev server
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+```
+
+## Deployment
+
+The site deploys automatically to GitHub Pages on every push to `main` via
+[.github/workflows/deploy.yml](.github/workflows/deploy.yml).
