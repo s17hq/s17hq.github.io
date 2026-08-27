@@ -4,7 +4,7 @@
   --color-bg: #f1f1f1;
   --color-text: #0e0e10;
   --color-accent: #ff4136;
-  --color-muted: #868686;
+  --color-muted: #6e6e6e;
   --color-rule: rgba(0, 0, 0, 0.08);
   --color-accent-strong: #d93a2f;
 
@@ -26,17 +26,39 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: auto;
+    overflow-anchor: none;
+  }
+
   body {
     @apply bg-bg text-text font-body text-base m-0;
+    overflow-anchor: none;
   }
 
   #root {
-    @apply flex flex-col items-center min-h-dvh w-full;
+    @apply flex flex-col items-center min-h-screen w-full;
+    min-height: 100dvh;
+    overflow-anchor: none;
   }
 
   a {
     color: inherit;
     text-decoration: none;
     transition: 0.2s ease;
+  }
+
+  :focus-visible {
+    outline-color: var(--color-accent-strong);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
